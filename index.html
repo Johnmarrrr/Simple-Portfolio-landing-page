@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Mode</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <div>Johnmar's Solutions</div>
+        <ul>
+            <li><a href="#banner" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="banner" class="banner">
+        <h1>Welcome to my Landing Page</h1>
+        <p>I am a web developer passionate about creating beautiful and functional websites.</p>
+        <a href="#contact" class="btn">Get Started</a>
+    </div>
+
+    <div id="about" class="about">
+        <h2>About Me</h2>
+        <p>I am a web developer passionate about creating beautiful and functional websites.</p>
+    </div>
+
+    <div id="services" class="services">
+        <h2>Our Services</h2>
+        <p>We offer a variety of services to help you enhance your coding abilities.
+            loren ipsum dolor sit amet consectetur adipisicing elit. Voluptas, doloremque! Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Mol
+        </p>
+    </div>
+
+    <div id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out to us
+            loren ipsum dolor sit amet consectetur adipisicing elit. Voluptas, doloremque! Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molloren ipsum dolor sit amet consectetur adipisicing elit. Voluptas, doloremque! Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Molestias, voluptate. Mol.</p>
+    </div>
+
+    <div class="contact-form"> 
+        <form action="" method="post">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('div[id]');
+        const navLinks = document.querySelectorAll('.navbar a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+
+
+</body>
+</html>
